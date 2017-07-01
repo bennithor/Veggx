@@ -20,10 +20,10 @@ public class PlayerMovement : MonoBehaviour {
 	void Update () {
         float verticalTranslation = Input.GetAxis("Vertical") * speed;
         float horizontalTranslation = Input.GetAxis("Horizontal") * speed;
-        float Rotation = Input.GetAxis("Rotation") * rotationSpeed;
+        float verticalRotation = Input.GetAxis("VerticalRotation");
+        float horizontalRotation = Input.GetAxis("HorizontalRotation");
+        transform.eulerAngles = new Vector3(0, 0, Mathf.Atan2(-horizontalRotation,-verticalRotation) * 180 / Mathf.PI);
 
-        Rotation *= Time.deltaTime;
-        transform.Rotate(0, 0, Rotation);
 
         verticalTranslation *= Time.deltaTime;
         horizontalTranslation *= Time.deltaTime;
