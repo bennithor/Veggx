@@ -19,10 +19,10 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float verticalTranslation = Input.GetAxis("Vertical") * speed;
-        float horizontalTranslation = Input.GetAxis("Horizontal") * speed;
-        float verticalRotation = Input.GetAxis("VerticalRotation");
-        float horizontalRotation = Input.GetAxis("HorizontalRotation");
+        float verticalTranslation = Input.GetAxis("Vertical" + playerNr) * speed;
+        float horizontalTranslation = Input.GetAxis("Horizontal" + playerNr) * speed;
+        float verticalRotation = Input.GetAxis("VerticalRotation" + playerNr);
+        float horizontalRotation = Input.GetAxis("HorizontalRotation" + playerNr);
         transform.eulerAngles = new Vector3(0, 0, Mathf.Atan2(-horizontalRotation,-verticalRotation) * 180 / Mathf.PI);
 
 
@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour {
 
 
 
-        if(Input.GetAxisRaw("Fire1") != 0)
+        if(Input.GetAxisRaw("Fire" + playerNr) != 0)
         {
             Transform newBullet = Instantiate(bullet);
             newBullet.position = gameObject.transform.position;
