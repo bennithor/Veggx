@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour {
     public float rotationSpeed = 400.0f;
     public float bulletSpeed = 50.0f;
     public Transform bullet;
+    public int playerNr;
     
 
     // Use this for initialization
@@ -30,6 +31,8 @@ public class PlayerMovement : MonoBehaviour {
         transform.Translate(0, verticalTranslation, 0, Space.World);
         transform.Translate(horizontalTranslation, 0, 0, Space.World);
 
+
+
         if(Input.GetAxisRaw("Fire1") != 0)
         {
             Transform newBullet = Instantiate(bullet);
@@ -37,6 +40,10 @@ public class PlayerMovement : MonoBehaviour {
             newBullet.position = gameObject.transform.position;
             newBullet.rotation = gameObject.transform.rotation;
             newBullet.Translate(newBullet.forward * bulletSpeed * Time.deltaTime);
+
+
+
+
         }
         
 
