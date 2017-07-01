@@ -5,11 +5,10 @@ using UnityEngine;
 public class Bullet : MonoBehaviour { 
 
 	public float bulletSpeed = 10.0f; 
-	public float lifetime = 2; 
+	public float lifetime = 2;
 
 	// Use this for initialization 
-	void Start () { 
-
+	void Start () {
 	} 
 
 	public void Init(float playerBulletSpeed) { 
@@ -18,7 +17,20 @@ public class Bullet : MonoBehaviour {
 	} 
 
 	// Update is called once per frame 
-	void Update () { 
+	void Update () {
 		transform.Translate(-Vector3.down * bulletSpeed * Time.deltaTime); 
 	} 
+
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        
+        if(!other.GetComponent<PlayerMovement>().playerNr.ToString().Equals(gameObject.tag))
+        {
+            
+            other.gameObject.GetComponent<PlayerMovement>().SizeReductionAndDeath();
+            Destroy(gameObject);
+        }
+        
+    }
 } 

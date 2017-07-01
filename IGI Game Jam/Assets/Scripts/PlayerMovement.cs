@@ -9,11 +9,12 @@ public class PlayerMovement : MonoBehaviour {
     public float bulletSpeed = 10.0f;
     public Transform bullet;
     public int playerNr;
+    int size;
     
 
     // Use this for initialization
     void Start () {
-
+        size = 3;
 
     }
 	
@@ -38,11 +39,22 @@ public class PlayerMovement : MonoBehaviour {
             Transform newBullet = Instantiate(bullet);
             newBullet.position = gameObject.transform.position;
             newBullet.rotation = gameObject.transform.rotation;
+            newBullet.tag = playerNr.ToString();
 			newBullet.GetComponent<Bullet>().Init(bulletSpeed);
 
         }
         
+        
 
+    }
 
+    public void SizeReductionAndDeath()
+    {
+        size -= 1;
+        if(size < 1)
+        {
+            GameObject.Find("ScriptObject").GetComponent<PlayerSpawner>().currentPlayers[playerNr - 1] = true;
+            Destroy(gameObject);
+        }
     }
 }

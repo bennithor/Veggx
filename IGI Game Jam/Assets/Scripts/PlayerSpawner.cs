@@ -7,14 +7,13 @@ public class PlayerSpawner : MonoBehaviour {
     int maxNumberOfPlayers = 4;
     int currentNumberOfPlayers = 0;
     public Transform player;
-    bool[] currentPlayers = new bool[4];
+    public bool[] currentPlayers = new bool[4];
 
 
 	// Use this for initialization
 	void Start () {
         for (int i=0; i < 4; i++)
         {
-            print(i);
             currentPlayers[i] = true;
         }
     }
