@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public float speed = 10.0F;
     public float rotationSpeed = 400.0f;
-    public float bulletSpeed = 50.0f;
+    public float bulletSpeed = 10.0f;
     public Transform bullet;
     public int playerNr;
     
@@ -36,14 +36,17 @@ public class PlayerMovement : MonoBehaviour {
         if(Input.GetAxisRaw("Fire1") != 0)
         {
             Transform newBullet = Instantiate(bullet);
-
             newBullet.position = gameObject.transform.position;
             newBullet.rotation = gameObject.transform.rotation;
+<<<<<<< Updated upstream
             newBullet.Translate(newBullet.forward * bulletSpeed * Time.deltaTime);
 
 
 
 
+=======
+			newBullet.GetComponent<Bullet>().Init(bulletSpeed);
+>>>>>>> Stashed changes
         }
         
 
