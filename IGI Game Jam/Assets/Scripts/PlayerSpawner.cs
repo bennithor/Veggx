@@ -29,12 +29,6 @@ public class PlayerSpawner : MonoBehaviour {
                 Transform spawnedPlayer = Instantiate(player);
                 spawnedPlayer.GetComponent<PlayerMovement>().playerNr = i;
                 currentPlayers[i - 1] = false;
-                string teststring = string.Empty;
-                foreach(bool test in currentPlayers)
-                {
-                    teststring += test + " ";
-                }
-                print(teststring);
 
             }
         }

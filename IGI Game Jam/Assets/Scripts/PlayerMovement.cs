@@ -38,15 +38,8 @@ public class PlayerMovement : MonoBehaviour {
             Transform newBullet = Instantiate(bullet);
             newBullet.position = gameObject.transform.position;
             newBullet.rotation = gameObject.transform.rotation;
-<<<<<<< Updated upstream
-            newBullet.Translate(newBullet.forward * bulletSpeed * Time.deltaTime);
-
-
-
-
-=======
 			newBullet.GetComponent<Bullet>().Init(bulletSpeed);
->>>>>>> Stashed changes
+
         }
         
 
