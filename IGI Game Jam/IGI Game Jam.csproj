@@ -84,11 +84,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DisplayWinner.cs" />
+    <Compile Include="Assets\GameLogic.cs" />
+    <Compile Include="Assets\InfoTransfer.cs" />
+    <Compile Include="Assets\Scripts\Boundaries.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerSpawner.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Sounds\Bottums Up - Morphamish License.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
   </ItemGroup>
